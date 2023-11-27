@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////////////
-// Authors: Michal Rajzer, Ben Green
+// Authors: Michal Rajzer(mr2207), Ben Green(bg651)
 // Date: 27/11/2023
 // Module name: ProgramCounter
 // Description: Design of a Program Counter (PC) that will be part of a microprocessor
@@ -26,7 +26,5 @@ begin
 			CounterValue <= CounterValue + Offset;
 		else
 			CounterValue <= CounterValue + 1;
-		
 end
-
 endmodule
