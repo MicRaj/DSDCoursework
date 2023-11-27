@@ -7,24 +7,26 @@
 module ProgramCounter
 //Define IO
 (
-logic input Clock,
-logic input Reset,
-logic signed input [15:0] LoadValue,//signed
-logic input LoadEnable,
-logic signed input [8:0] Offset, //signed
-logic input OffsetEnable,
-logic signed output [15:0] CounterValue //signed
+input logic Clock,
+input logic Reset,
+input logic signed [15:0] LoadValue,//signed
+input logic LoadEnable,
+input logic signed [8:0] Offset, //signed
+input logic OffsetEnable,
+output logic signed [15:0] CounterValue //signed
 );
 
 always_ff @(posedge Clock, posedge Reset)
 begin
 		if (Reset)
-			CounterValue <= ’0;
+			CounterValue <= '0;
 		else if(LoadEnable)
-			CounterValue <= LoadValue
+			CounterValue <= LoadValue;
 		else if(OffsetEnable)
-			CounterValue <= CounterValue
-
+			CounterValue <= CounterValue + Offset;
+		else
+			CounterValue <= CounterValue + 1;
+		
 end
 
 endmodule
