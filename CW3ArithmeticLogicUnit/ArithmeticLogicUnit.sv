@@ -74,17 +74,139 @@ module ArithmeticLogicUnit
 			
 			ROR: {OutDest,OutFlags.Carry} = {InFlags.Carry,InSrc}; // Right bit Shift
 			
-			ADC: 
+			ADC: // Sum of Src, Dest and carry flag. Flags are set according to the result.
 				begin
-					OutDest = InSrc + InDest + OutFlags.Carry; // Sum of Src, Dest and carry flag. Flags are set according to the result.
+					OutDest = InSrc + InDest + OutFlags.Carry;
+					// Carry
+					if(InSrc+InDest+OutFlags.Carry >= 2**DataWidth)
+						OutFlags.Carry = 1;
+					else
+						OutFlags.Carry = 0;
+					// Zero Flag
+					if(OutDest == 0) 
+						OutFlags.Zero = 1;
+					else
+						OutFlags.Zero = 0;
+					// Negative Flag
+					if(OutDest[DataWidth-1]== 1) begin
+						OutFlags.Negative = 1;
+					end else begin
+						OutFlags.Negative = 0;
+					end
+					// Overflow
+
+					if((~(InSrc[DataWidth-1]) && ~(InDest[DataWidth-1]) && OutDest[DataWidth-1]) || 
+					(InSrc[DataWidth-1] && InDest[DataWidth-1] && ~(OutDest[DataWidth-1])))
+						OutFlags.Overflow = 1;
+					else begin
+						OutFlags.Overflow = 0;
+					end
+					// Parity
+					OutFlags.Parity = ~(^(OutDest));					
 				end
-			SUB: 
+				
+			SUB: // Subtraction. Flags are set according to the result.
+				begin
+					OutDest = InDest - (InSrc + OutFlags.Carry);		
+					// Carry
+					OutFlags.Carry = (InDest<(InSrc + OutFlags.Carry));
+					// Zero Flag
+					if(OutDest == 0) 
+						OutFlags.Zero = 1;
+					else
+						OutFlags.Zero = 0;
+					// Negative Flag
+					if(OutDest[DataWidth-1]== 1)
+						OutFlags.Negative = 1;
+					else
+						OutFlags.Negative = 0;
+					// Overflow
+					if(((InSrc[DataWidth-1]) && ~(InDest[DataWidth-1]) && OutDest[DataWidth-1]) || 
+					(~(InSrc[DataWidth-1]) && InDest[DataWidth-1] && ~(OutDest[DataWidth-1])))
+						OutFlags.Overflow = 1;
+					else begin
+						OutFlags.Overflow = 0;
+					end
+					// Parity
+					OutFlags.Parity = ~(^(OutDest));		
+				end
+				
+			DIV: // Result of integer signed division
+				begin
+					OutDest = InDest/InSrc;
+					// Zero Flag
+					if(OutDest == 0) 
+						OutFlags.Zero = 1;
+					else
+						OutFlags.Zero = 0;
+					// Negative Flag
+					if(OutDest[DataWidth-1]== 1)
+						OutFlags.Negative = 1;
+					else begin
+						OutFlags.Negative = 0;
+					end
+					// Parity
+					OutFlags.Parity = ~(^(OutDest));		
+				end
+				
+			MOD: // Remainder of integer signed division
+				begin
+					OutDest = InDest%InSrc;
+					// Zero Flag
+					if(OutDest == 0) 
+						OutFlags.Zero = 1;
+					else
+						OutFlags.Zero = 0;
+					// Negative Flag
+					if(OutDest[DataWidth-1]== 1)
+						OutFlags.Negative = 1;
+					else begin
+						OutFlags.Negative = 0;
+					end
+					// Parity
+					OutFlags.Parity = ~(^(OutDest));	
+				end
 			
-			
-			
-			
-			// ***** ONLY CHANGES ABOVE THIS LINE ARE ASSESSED	*****		
-			
+			MUL: // Lower half of integer signed multiplication
+				begin
+					logic signed [31:0] multResult; // Variable to hold 32bit multiplication output
+					multResult = InDest * InSrc;
+					OutDest = multResult[DataWidth-1:0]; // Lower 16 Bits			
+					// Zero Flag
+						if(OutDest == 0) 
+							OutFlags.Zero = 1;
+						else
+							OutFlags.Zero = 0;
+					// Negative Flag
+					if(OutDest[DataWidth-1]== 1)
+						OutFlags.Negative = 1;
+					else begin
+						OutFlags.Negative = 0;
+					end
+					// Parity
+					OutFlags.Parity = ~(^(OutDest));	
+				end
+			MUH: // High half of integer signed multiplication
+				begin
+					logic signed [31:0] multResult;
+					multResult = InDest * InSrc;
+					OutDest = multResult[2*DataWidth-1:DataWidth]; // Upper 16 Bits		
+					// Zero Flag
+						if(OutDest == 0) 
+							OutFlags.Zero = 1;
+						else
+							OutFlags.Zero = 0;
+					// Negative Flag
+					if(OutDest[DataWidth-1]== 1)
+						OutFlags.Negative = 1;
+					else begin
+						OutFlags.Negative = 0;
+					end
+					// Parity
+					OutFlags.Parity = ~(^(OutDest));	
+				end				
+//			// ***** ONLY CHANGES ABOVE THIS LINE ARE ASSESSED	*****		
+//			
 			default:	OutDest = '0;
 			
 		endcase;
