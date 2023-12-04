@@ -68,19 +68,6 @@ module ArithmeticLogicUnit
 			// ***** ONLY CHANGES BELOW THIS LINE ARE ASSESSED *****
 			// Put your instruction implementations here.
 			
-			MOVE: OutDest = InSrc; // Copies the content of register Src to register Dest.
-			
-			NOR: OutDest = ~(InSrc || InDest); // Outputs NOR of values in InSrc and InDest registers
-			
-			ROR: {OutDest,OutFlags.Carry} = {InFlags.Carry,InSrc}; // Right bit Shift
-			
-			ADC: 
-				begin
-					OutDest = InSrc + InDest + OutFlags.Carry; // Sum of Src, Dest and carry flag. Flags are set according to the result.
-				end
-			SUB: 
-			
-			
 			
 			
 			// ***** ONLY CHANGES ABOVE THIS LINE ARE ASSESSED	*****		
