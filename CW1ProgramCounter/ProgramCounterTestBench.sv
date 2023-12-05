@@ -45,21 +45,19 @@ module ProgramCounterTestBench();
 	OffsetEnable = 0;
 	LoadEnable = 0;
 	LoadValue = 0;
-	##20; // PC should increment to 9 if starting at 0
+	##20; // default incrementing test - PC should increment to 9 if starting at 0
 
 	$display("CounterValue = %d, should be 9", CounterValue);
-	##20; // PC should be at 19	
-
 	LoadValue = 15'b1111000011110000;
 	LoadEnable = 1;
-	##1;
+	##1; // load value test, should be at 1111000011110000
 
 	LoadEnable = 0;
 	$display("CounterValue = %d, should be 1111000011110000", CounterValue);
-	##1
+	##1 
 
 	Reset = 1;
-	##1
+	##1 // reset test
 
 	Reset = 0;
 	$display("CounterValue = %d, should be 0", CounterValue);
@@ -67,8 +65,8 @@ module ProgramCounterTestBench();
 
 	OffsetEnable = 1;
 	Offset = 8'b000110111;
-	##1
-
+	##1 // offset test, should be at 000111000
+	
 	OffsetEnable = 0;
 	$display("CounterValue = %d, should be b000111000", CounterValue) ;
 
