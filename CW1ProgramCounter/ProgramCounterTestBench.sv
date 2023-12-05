@@ -1,3 +1,5 @@
+`timescale 1ns / 1ps
+
 // ProgramCounterTestBench
 //
 //
@@ -11,20 +13,18 @@
 
 module ProgramCounterTestBench();
 
-	// These are the signals that connect to 
-	// the program counter
-	logic              	Clock = '0;
-	logic              	Reset;
-	logic signed       [15:0]	LoadValue;
-	logic				LoadEnable;
-	logic signed  [8:0]	Offset;
-	logic 					OffsetEnable;
-	logic signed  [15:0]	CounterValue;
+	// These are the signals that connect to the program counter
+	logic 				Clock = '0;
+	logic 				Reset;
+	logic signed [15:0] LoadValue;
+	logic               LoadEnable;
+	logic signed [8:0]  Offset;
+	logic 			    OffsetEnable;
+	logic signed [15:0] CounterValue;
 
-	// this is another method to create an instantiation
-	// of the program counter
-	ProgramCounter uut
-	(
+	// this is another method to create an instantiation of the program counter
+
+	ProgramCounter uut (
 		.Clock,
 		.Reset,
 		.LoadValue,
@@ -33,24 +33,46 @@ module ProgramCounterTestBench();
 		.OffsetEnable,
 		.CounterValue
 	);
-	
 
 	default clocking @(posedge Clock);
 	endclocking
 		
-	always  #10  Clock++;
+	always  #10  Clock++; // clock speed is 20ns, as 2 increments/cycle needed as clock pulses on posedge
 
 	initial
 	begin
 	Reset = 0;
-	OffseEnable = 0;
+	OffsetEnable = 0;
 	LoadEnable = 0;
-	
-	// add your code here to test the functionality
-	// of your program counter
+	LoadValue = 0;
+	##20; // PC should increment to 9 if starting at 0
 
+	$display("CounterValue = %d, should be 9", CounterValue);
+	##20; // PC should be at 19	
 
-	
+	LoadValue = 15'b1111000011110000;
+	LoadEnable = 1;
+	##1;
+
+	LoadEnable = 0;
+	$display("CounterValue = %d, should be 1111000011110000", CounterValue);
+	##1
+
+	Reset = 1;
+	##1
+
+	Reset = 0;
+	$display("CounterValue = %d, should be 0", CounterValue);
+	##1
+
+	OffsetEnable = 1;
+	Offset = 8'b000110111;
+	##1
+
+	OffsetEnable = 0;
+	$display("CounterValue = %d, should be b000111000", CounterValue) ;
+
+	$stop
 	end
 endmodule
 	
