@@ -27,7 +27,7 @@ end
 
 always_comb
 begin
-	ReadDataB <= Registers[AddressA]; //Read Data Asynchronously
+	ReadDataA <= Registers[AddressA]; //Read Data Asynchronously
 	ReadDataB <= Registers[AddressB]; 
 end
 
