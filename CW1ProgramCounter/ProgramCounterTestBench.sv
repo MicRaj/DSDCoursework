@@ -1,15 +1,11 @@
-`timescale 1ns / 1ps
+////////////////////////////////////////////////////////////////////////////////////////
+// Authors: Michal Rajzer(mr2207), Ben Green(bg651)
+// Date: 27/11/2023
+// Module name: ProgramCounter
+// Description: ProgramCounter testbench file, used to test the microprocessor's PC
+////////////////////////////////////////////////////////////////////////////////////////
 
-// ProgramCounterTestBench
-//
-//
-// This module implements a testbench for 
-// the Program Counter to be created in the
-// Digital Systems Design tutorial.
-// 
-// You need to add the code to test the
-// functionality of your PC
-//
+`timescale 1ns / 1ps
 
 module ProgramCounterTestBench();
 
@@ -37,40 +33,54 @@ module ProgramCounterTestBench();
 	default clocking @(posedge Clock);
 	endclocking
 		
-	always  #10  Clock++; // clock speed is 20ns, as 2 increments/cycle needed as clock pulses on posedge
+	always  #10  Clock++; // clock speed is 50MHz, as 2 increments/cycle needed as clock pulses on posedge, so 20e-9 second period, which is 50MHz
 
 	initial
 	begin
-	Reset = 0;
-	OffsetEnable = 0;
-	LoadEnable = 0;
-	LoadValue = 0;
-	##20; // default incrementing test - PC should increment to 9 if starting at 0
+		// default incrementing test, should produce value of 9
+		// -------------------------------------------
+		Reset = 0;
+		OffsetEnable = 0;
+		LoadEnable = 0;
+		LoadValue = 0;
+		##20; 
+		$display("CounterValue = %d, should be 5", CounterValue);
+		// -------------------------------------------
 
-	$display("CounterValue = %d, should be 9", CounterValue);
-	LoadValue = 15'b1111000011110000;
-	LoadEnable = 1;
-	##1; // load value test, should be at 1111000011110000
+		// load value test, should produce a value of 1111000011110000
+		// -------------------------------------------
+		LoadValue = 15'b1111000011110000;
+		LoadEnable = 1;
+		##2; 
+		$display("CounterValue = %d, should be 1111000011110000", CounterValue);
+		// -------------------------------------------
 
-	LoadEnable = 0;
-	$display("CounterValue = %d, should be 1111000011110000", CounterValue);
-	##1 
+		// -------------------------------------------
+		LoadEnable = 0;
+		##2;
+		// -------------------------------------------
 
-	Reset = 1;
-	##1 // reset test
+		// reset test, should produce value of 0
+		// -------------------------------------------
+		Reset = 1;
+		##2;
+		$display("CounterValue = %d, should be 0", CounterValue);
+		// -------------------------------------------
 
-	Reset = 0;
-	$display("CounterValue = %d, should be 0", CounterValue);
-	##1
+		// -------------------------------------------
+		Reset = 0;
+		##2;
+		// -------------------------------------------
 
-	OffsetEnable = 1;
-	Offset = 8'b000110111;
-	##1 // offset test, should be at 000111000
-	
-	OffsetEnable = 0;
-	$display("CounterValue = %d, should be b000111000", CounterValue) ;
+		// offset test, should produce value of 000111000
+		// -------------------------------------------
+		OffsetEnable = 1;
+		Offset = 8'b000110111;
+		##2;
+		$display("CounterValue = %d, should be b000111000", CounterValue) ;
+		// -------------------------------------------
 
-	$stop
+		$stop
 	end
 endmodule
 	
