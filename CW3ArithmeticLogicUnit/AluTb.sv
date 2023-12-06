@@ -110,8 +110,61 @@ module AluTb();
 	
 
 		// Put your code here to verify the instructions.
+		
+		// already implemented so should work
+		// -------------------------------------------
+		ROL 
+		NAND
+		LIL
+		LIU
+		// -------------------------------------------
 
+		// MOVE - Copies the content of register Src to register Dest.
+		// -------------------------------------------
+		Operation = MOVE;
+		InSrc = 16'hF0F0
+		if (OutDest != 16'hF0F0) $display("Error in MOVE operation at time %t",$time);
+		// -------------------------------------------
 
+		// NOR - Outputs NOR of values in InSrc and InDest registers
+		// -------------------------------------------
+		NOR 
+		// -------------------------------------------
+
+		// ROR - Right bit Shift
+		// -------------------------------------------
+		ROR 
+		// -------------------------------------------
+
+		// ADC - Sum of Src, Dest and carry flag. Flags are set according to the result.
+		// -------------------------------------------
+		ADC 
+		// -------------------------------------------
+
+		// SUB - Subtraction. Flags are set according to the result.
+		// -------------------------------------------
+		SUB 
+		// -------------------------------------------
+
+		// DIV - Result of integer signed division
+		// -------------------------------------------
+		DIV
+		// -------------------------------------------
+
+		// MOD - Remainder of integer signed division
+		// -------------------------------------------
+		MOD 
+		// -------------------------------------------
+
+		// MUL - Lower half of integer signed multiplication
+		// -------------------------------------------
+		MUL 
+		// -------------------------------------------
+
+		// MUH - High half of integer signed multiplication
+		// -------------------------------------------
+		MUH 
+		// -------------------------------------------
 
 		// End of instruction simulation
 

@@ -39,25 +39,27 @@ module RegisterFileTb();
 		AddressA = 15;
 		AddressB = 22;
 		WriteEnable = 1;
-		WriteData = 15'b1111000011110000;
+		WriteData = 16'b1111000011110000;
 		##2;
 		$display("ReadDataA = %d, should be 1111000011110000", ReadDataA);
 		$display("ReadDataB = %d, should be 0000000000000000", ReadDataB);
+		if (ReadDataA != 16'b1111000011110000) $display("Error in read/write A operation at time %t",$time);
+		if (ReadDataB != 16'b0000000000000000) $display("Error in read/write B operation at time %t",$time);
 		// -------------------------------------------
 
 		// overwrite data test
 		// -------------------------------------------
-		WriteData = 15'b0000000000000000;
+		WriteData = 16'b0000000000000000;
 		##2;
-		$display("ReadDataA = %d, should be b0000000000000000", ReadDataA);
+		if (ReadDataA != 16'b0000000000000000) $display("Error in overwrite operation at time %t",$time);
 		// -------------------------------------------
 
 		// write enable test
 		// -------------------------------------------
 		WriteEnable = 0;
-		WriteData = 15'b1010101010101010;
+		WriteData = 16'b1010101010101010;
 		##2;
-		$display("ReadDataA = %d, should be b0000000000000000", ReadDataA);
+		if (ReadDataA != 16'b0000000000000000) $display("Error in write enable operation at time %t",$time);
 		// -------------------------------------------
 
 		$stop
