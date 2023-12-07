@@ -128,17 +128,56 @@ module AluTb();
 
 		// NOR - Outputs NOR of values in InSrc and InDest registers
 		// -------------------------------------------
-		NOR 
+		Operation = NOR;		
+		InDest = 16'h0000;
+		InSrc  = 16'ha5a5;  
+ 
+	   #1 if (OutDest != 16'h5a5a) $display("Error in NOR operation at time %t",$time);
+		
+		#10 InDest = 16'h9999; 
+	   #1 if (OutDest != 16'h6666) $display("Error in NAND operation at time %t",$time);
+		
+		#10 InDest = 16'hFFFF; 
+	   #1 if (OutDest != 16'h0000) $display("Error in NOR operation at time %t",$time);
+		
+		#10 InDest = 16'h1234; 
+	   #1 if (OutDest != 16'hedcb) $display("Error in NOR operation at time %t",$time);
+		
+		#10 InSrc = 16'h0000;   
+		InDest = 16'ha5a5;     
+	   #1 if (OutDest != 16'5a5a) $display("Error in NOR operation at time %t",$time);
+		
+		#10 InSrc = 16'h9999;  
+	   #1 if (OutDest != 16'h2424) $display("Error in NOR operation at time %t",$time);
+		
+		#10 InSrc = 16'hFFFF; 
+	   #1 if (OutDest != 16'h0000) $display("Error in NOR operation at time %t",$time);
+		
+		#10 InSrc = 16'h1234;  
+	   #1 if (OutDest != 16'h484A) $display("Error in NOR operation at time %t",$time);
+		#50;
+
 		// -------------------------------------------
 
 		// ROR - Right bit Shift
 		// -------------------------------------------
-		ROR 
-		// -------------------------------------------
+		Operation = ROR;
 
-		// ADC - Sum of Src, Dest and carry flag. Flags are set according to the result.
-		// -------------------------------------------
-		ADC 
+		InSrc  = 16'0FF0;
+		InFlags = sFlags'(1);
+
+		#1 
+		if (OutDest != 16'h87f8) $display("Error in ROR operation at time %t",$time);
+		if (OutFlags != sFlags'(0)) $display("Error (flags) in ROR operation at time %t",$time);
+
+		#10 InSrc  = 16'000F;
+		if (OutDest != 16'h8007) $display("Error in ROR operation at time %t",$time);
+		if (OutFlags != sFlags'(1)) $display("Error (flags) in ROR operation at time %t",$time);
+
+		#10 InFlags = sFlags'(0);
+		if (OutDest != 16'h0007) $display("Error in ROR operation at time %t",$time);
+		if (OutFlags != sFlags'(1)) $display("Error (flags) in ROR operation at time %t",$time);
+
 		// -------------------------------------------
 
 		// SUB - Subtraction. Flags are set according to the result.
