@@ -194,18 +194,37 @@ module AluTb();
 
 		#1 
 		if (OutDest != 16'h0000) $display("Error in DIV operation at time %t",$time);
-		if (OutFlags != sFlags'(9)) $display("Error (flags) in DIV operation at time %t",$time); // Zero,Parity Flag Check
+		if (OutFlags != sFlags'(10)) $display("Error (flags) in DIV operation at time %t",$time); // Zero, Parity Flag Check
 
 		#10 InDest = 16'hFFCE;
 		if (OutDest != 16'hFFFB) $display("Error in DIV operation at time %t",$time);
-		if (OutFlags != sFlags'(15)) $display("Error (flags) in DIV operation at time %t",$time);
+		if (OutFlags != sFlags'(4)) $display("Error (flags) in DIV operation at time %t",$time); // Negative
 
-		
+		#10 InDest = 16'h0032;
+		if (OutDest != 16'h0005) $display("Error in DIV operation at time %t",$time);
+		if (OutFlags != sFlags'(8)) $display("Error (flags) in DIV operation at time %t",$time); // Parity Check
+		#50;
 		// -------------------------------------------
 
 		// MOD - Remainder of integer signed division
 		// -------------------------------------------
-		MOD 
+		Operation = MOD;
+		InSrc = 16'h000A;
+		InDest = 16'h000A;
+		InFlags = sFlags'(0);
+
+		#1 
+		if (OutDest != 16'h0000) $display("Error in DIV operation at time %t",$time);
+		if (OutFlags != sFlags'(10)) $display("Error (flags) in DIV operation at time %t",$time); // Zero, Parity Flag Check
+
+		#10 InDest = 16'hFAAD;
+		if (OutDest != 16'h0003) $display("Error in DIV operation at time %t",$time);
+		if (OutFlags != sFlags'(0)) $display("Error (flags) in DIV operation at time %t",$time);
+
+		#10 InDest = 16'h0AAC;
+		if (OutDest != 16'h0002) $display("Error in DIV operation at time %t",$time);
+		if (OutFlags != sFlags'(8)) $display("Error (flags) in DIV operation at time %t",$time);
+		#50;
 		// -------------------------------------------
 
 		// MUL - Lower half of integer signed multiplication
