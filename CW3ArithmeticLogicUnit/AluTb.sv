@@ -163,7 +163,7 @@ module AluTb();
 		// -------------------------------------------
 		Operation = ROR;
 
-		InSrc  = 16'0FF0;
+		InSrc  = 16'h0FF0;
 		InFlags = sFlags'(1);
 
 		#1 
@@ -177,9 +177,9 @@ module AluTb();
 		#10 InFlags = sFlags'(0);
 		if (OutDest != 16'h0007) $display("Error in ROR operation at time %t",$time);
 		if (OutFlags != sFlags'(1)) $display("Error (flags) in ROR operation at time %t",$time);
+		#50;
 
 		// -------------------------------------------
-
 		// SUB - Subtraction. Flags are set according to the result.
 		// -------------------------------------------
 		SUB 
@@ -187,7 +187,20 @@ module AluTb();
 
 		// DIV - Result of integer signed division
 		// -------------------------------------------
-		DIV
+		Operation = DIV;
+		InSrc = 16'h000A;
+		InDest = 16'h0000;
+		InFlags = sFlags'(0);
+
+		#1 
+		if (OutDest != 16'h0000) $display("Error in DIV operation at time %t",$time);
+		if (OutFlags != sFlags'(9)) $display("Error (flags) in DIV operation at time %t",$time); // Zero,Parity Flag Check
+
+		#10 InDest = 16'hFFCE;
+		if (OutDest != 16'hFFFB) $display("Error in DIV operation at time %t",$time);
+		if (OutFlags != sFlags'(15)) $display("Error (flags) in DIV operation at time %t",$time);
+
+		
 		// -------------------------------------------
 
 		// MOD - Remainder of integer signed division
