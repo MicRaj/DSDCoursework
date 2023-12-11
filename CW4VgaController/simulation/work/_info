@@ -1,0 +1,63 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/Users/mrajz/Documents/UNI/SecondYear/EE20021-DigitalSystemsDesign/DSDCoursework/CW2RegisterFile/Simulation
+vVgaController
+Z0 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
+!s110 1702320363
+!i10b 1
+!s100 G5:6K6Noa:k]Yh^CfMOaL3
+Z1 !s11b Dg1SIo80bB@j0V0VzS_@n1
+I<8>LGkI_=joGRY[BW0;_m2
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+S1
+Z3 dC:/Users/mrajz/Documents/UNI/SecondYear/EE20021-DigitalSystemsDesign/DSDCoursework/CW4VgaController/simulation
+w1702320357
+8C:/Users/mrajz/Documents/UNI/SecondYear/EE20021-DigitalSystemsDesign/DSDCoursework/CW4VgaController/VgaController.sv
+FC:/Users/mrajz/Documents/UNI/SecondYear/EE20021-DigitalSystemsDesign/DSDCoursework/CW4VgaController/VgaController.sv
+!i122 2
+L0 5 85
+Z4 OV;L;2020.1;71
+r1
+!s85 0
+31
+!s108 1702320363.000000
+!s107 C:/Users/mrajz/Documents/UNI/SecondYear/EE20021-DigitalSystemsDesign/DSDCoursework/CW4VgaController/VgaController.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/mrajz/Documents/UNI/SecondYear/EE20021-DigitalSystemsDesign/DSDCoursework/CW4VgaController/VgaController.sv|
+!i113 1
+Z5 o-work work -sv
+Z6 tCvgOpt 0
+n@vga@controller
+vVgaTb
+R0
+!s110 1702320364
+!i10b 1
+!s100 lR;>cSFJJJ>8XS=UkEk]l2
+R1
+Ie301?YQ<F[MmOWRA109O?2
+R2
+S1
+R3
+w1701181927
+8C:/Users/mrajz/Documents/UNI/SecondYear/EE20021-DigitalSystemsDesign/DSDCoursework/CW4VgaController/VgaTb.sv
+FC:/Users/mrajz/Documents/UNI/SecondYear/EE20021-DigitalSystemsDesign/DSDCoursework/CW4VgaController/VgaTb.sv
+!i122 3
+L0 3 39
+R4
+r1
+!s85 0
+31
+!s108 1702320364.000000
+!s107 C:/Users/mrajz/Documents/UNI/SecondYear/EE20021-DigitalSystemsDesign/DSDCoursework/CW4VgaController/VgaTb.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/mrajz/Documents/UNI/SecondYear/EE20021-DigitalSystemsDesign/DSDCoursework/CW4VgaController/VgaTb.sv|
+!i113 1
+R5
+R6
+n@vga@tb

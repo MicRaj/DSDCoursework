@@ -1,0 +1,48 @@
+# Compile of VgaController.sv was successful.
+# Compile of VgaTb.sv was successful.
+# 2 compiles, 0 failed with no errors.
+vsim work.VgaTb
+# vsim work.VgaTb 
+# Start time: 18:39:26 on Dec 11,2023
+# Loading sv_std.std
+# Loading work.VgaTb
+# Loading work.VgaController
+# WARNING: No extended dataflow license exists
+add wave sim:/VgaTb/*
+run -all
+# Break key hit
+# Simulation stop requested.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+run
+restart -f
+run -all
+# Break key hit
+# Break in Module VgaTb at C:/Users/mrajz/Documents/UNI/SecondYear/EE20021-DigitalSystemsDesign/DSDCoursework/CW4VgaController/VgaTb.sv line 20
+run
+restart -f
+run
+# Compile of VgaController.sv was successful.
+# Compile of VgaTb.sv was successful.
+# 2 compiles, 0 failed with no errors.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.VgaTb
+# Loading work.VgaController
+run -all
+# Break key hit
+# Break in Module VgaController at C:/Users/mrajz/Documents/UNI/SecondYear/EE20021-DigitalSystemsDesign/DSDCoursework/CW4VgaController/VgaController.sv line 25
+restart -f
+run -all
+# Break key hit
+# Break in Module VgaController at C:/Users/mrajz/Documents/UNI/SecondYear/EE20021-DigitalSystemsDesign/DSDCoursework/CW4VgaController/VgaController.sv line 47
+add wave -position insertpoint sim:/VgaTb/uut/#ALWAYS#25/*
+add wave sim:/VgaTb/uut/#ALWAYS#25/*
+add wave sim:/VgaTb/uut/#ALWAYS#25/*
+add wave -position insertpoint sim:/VgaTb/*
+restart -f
+run -all
+# Break key hit
+# Break in Module VgaTb at C:/Users/mrajz/Documents/UNI/SecondYear/EE20021-DigitalSystemsDesign/DSDCoursework/CW4VgaController/VgaTb.sv line 20
+# Expression input symbol /VgaTb/uut/nextX is not loggedExpression input symbol /VgaTb/uut/nextX is not loggedExpression input symbol /VgaTb/uut/nextX is not loggedExpression input symbol /VgaTb/uut/nextX is not loggedExpression input symbol /VgaTb/uut/nextX is not loggedExpression input symbol /VgaTb/uut/nextX is not loggedExpression input symbol /VgaTb/uut/nextX is not loggedExpression input symbol /VgaTb/uut/nextX is not loggedExpression input symbol /VgaTb/uut/nextX is not loggedExpression input symbol /VgaTb/uut/nextX is not loggedExpression input symbol /VgaTb/uut/nextX is not logged# End time: 19:11:36 on Dec 11,2023, Elapsed time: 0:32:10
+# Errors: 0, Warnings: 1

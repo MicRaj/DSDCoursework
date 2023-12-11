@@ -58,7 +58,7 @@ module VgaController
 			nextY <= '0;
 			
 		//blank_n
-		if ((hCount >= 800) && (vCount >= 600))
+		if ((hCount >= 800) || (vCount >= 600))
 			blank_n = '0;
 		else
 			blank_n = '1;
