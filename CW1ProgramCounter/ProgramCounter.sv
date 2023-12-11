@@ -13,7 +13,7 @@ input logic signed [15:0] LoadValue,//signed
 input logic LoadEnable,
 input logic signed [8:0] Offset, //signed
 input logic OffsetEnable,
-output logic signed [15:0] CounterValue //signed
+output logic signed [15:0] CounterValue = 0 //signed
 );
 
 always_ff @(posedge Clock, posedge Reset)
