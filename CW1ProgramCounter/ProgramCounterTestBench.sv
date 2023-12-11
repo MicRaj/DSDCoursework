@@ -43,13 +43,15 @@ module ProgramCounterTestBench();
 		OffsetEnable = 0;
 		LoadEnable = 0;
 		LoadValue = 0;
+		Offset = 0;
+		
 		##20; 
-		if (CounterValue != 16'd9) $display("Error in default increment operation at time %t",$time);
+		if (CounterValue != 16'd20) $display("Error in default increment operation at time %t",$time);
 		// -------------------------------------------
 
 		// load value test, should produce a value of 1111000011110000
 		// -------------------------------------------
-		LoadValue = 15'hF0F0;
+		LoadValue = 16'hF0F0;
 		LoadEnable = 1;
 		##2; 
 		if (CounterValue != 16'hF0F0) $display("Error in load operation at time %t",$time);
@@ -77,10 +79,10 @@ module ProgramCounterTestBench();
 		OffsetEnable = 1;
 		Offset = 8'b000110111;
 		##2;
-		if (CounterValue != 16'b000111000) $display("Error in offset test operation at time %t",$time);
+		if (CounterValue != 16'b001110000) $display("Error in offset test operation at time %t",$time);
 		// -------------------------------------------
-
-		$stop
+		##2;
+		$stop;
 	end
 endmodule
 	
