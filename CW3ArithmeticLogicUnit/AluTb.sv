@@ -215,7 +215,6 @@ module AluTb();
 		if (OutFlags != sFlags'(28)) $display("Error (flags) in SUB operation at time %t",$time);
 		// tests overflow flag
 
-
 		/*
 		InFlags = sFlags'(0);
 		InDest = 16'd0;
@@ -226,7 +225,6 @@ module AluTb();
 		// tests subtraction that involving carry flag
 		*/ 
 		// not implemented
-
 		// -------------------------------------------
 
 		// DIV - Result of integer signed division
@@ -333,20 +331,3 @@ module AluTb();
 		$display("End of tests");
 	end
 endmodule
-
-		// -------------------------------------------
-		// SUB - Subtraction. Flags are set according to the result.
-		// -------------------------------------------
-		Operation = SUB;
-		InFlags = sFlags'(0);
-		InDest = 16'd1024;
-		InSrc = 16'd16;
-		#1
-		if (OutDest != 16'd1008) $display("Error in SUB operation at time %t",$time);
-		if (OutFlags != sFlags'(8)) $display("Error (flags) in SUB operation at time %t",$time);
-		// tests generic subtraction
-
-		InFlags = sFlags'(0);
-		InDest = 16'd16;
-		InSrc = 16'd1024;
-		#1
