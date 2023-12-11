@@ -1,5 +1,5 @@
 Analysis & Elaboration report for ArithmeticLogicUnit
-Mon Dec  4 16:59:19 2023
+Mon Dec 11 15:31:42 2023
 Quartus Prime Version 22.1std.2 Build 922 07/20/2023 SC Lite Edition
 
 
@@ -38,7 +38,7 @@ https://fpgasoftware.intel.com/eula.
 +--------------------------------------------------------------------------------+
 ; Analysis & Elaboration Summary                                                 ;
 +-------------------------------+------------------------------------------------+
-; Analysis & Elaboration Status ; Successful - Mon Dec  4 16:59:19 2023          ;
+; Analysis & Elaboration Status ; Successful - Mon Dec 11 15:31:42 2023          ;
 ; Quartus Prime Version         ; 22.1std.2 Build 922 07/20/2023 SC Lite Edition ;
 ; Revision Name                 ; ArithmeticLogicUnit                            ;
 ; Top-level Entity Name         ; AluFpgaTop                                     ;
@@ -173,7 +173,7 @@ https://fpgasoftware.intel.com/eula.
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Elaboration
     Info: Version 22.1std.2 Build 922 07/20/2023 SC Lite Edition
-    Info: Processing started: Mon Dec  4 16:59:09 2023
+    Info: Processing started: Mon Dec 11 15:31:34 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ArithmeticLogicUnit -c ArithmeticLogicUnit --analysis_and_elaboration
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
@@ -190,8 +190,8 @@ Info (12128): Elaborating entity "ArithmeticLogicUnit" for hierarchy "Arithmetic
 Info (12128): Elaborating entity "SignedDecoder" for hierarchy "SignedDecoder:Src" File: C:/Users/mrajz/Documents/UNI/SecondYear/EE20021-DigitalSystemsDesign/DSDCoursework/CW3ArithmeticLogicUnit/AluFpgaTop.sv Line: 80
 Info: Quartus Prime Analysis & Elaboration was successful. 0 errors, 2 warnings
     Info: Peak virtual memory: 4781 megabytes
-    Info: Processing ended: Mon Dec  4 16:59:19 2023
-    Info: Elapsed time: 00:00:10
-    Info: Total CPU time (on all processors): 00:00:13
+    Info: Processing ended: Mon Dec 11 15:31:42 2023
+    Info: Elapsed time: 00:00:08
+    Info: Total CPU time (on all processors): 00:00:05
 
 

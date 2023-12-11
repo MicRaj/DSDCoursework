@@ -70,7 +70,7 @@ module ArithmeticLogicUnit
 			
 			MOVE: OutDest = InSrc; // Copies the content of register Src to register Dest.
 			
-			NOR: OutDest = ~(InSrc || InDest); // Outputs NOR of values in InSrc and InDest registers
+			NOR: OutDest = ~(InSrc | InDest); // Outputs NOR of values in InSrc and InDest registers
 			
 			ROR: {OutDest,OutFlags.Carry} = {InFlags.Carry,InSrc}; // Right bit Shift
 			

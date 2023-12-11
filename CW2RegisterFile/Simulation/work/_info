@@ -9,38 +9,174 @@ z2
 !i10f 100
 cModel Technology
 dC:/Users/mrajz/Documents/UNI/SecondYear/EE20021-DigitalSystemsDesign/DSDCoursework/CW1ProgramCounter/simulation
-vRegisterFile
+vAluTb
 Z0 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
-Z1 !s110 1702306087
-!i10b 1
-!s100 onQ1aiLQFVgRZTb5^g3zb2
-Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
-ITN1]SHS18HBf];`ZA>]:O0
+Z1 DXx4 work 17 InstructionSetPkg 0 22 f^IZBAbePmP3M:aJmAVle2
+DXx4 work 13 AluTb_sv_unit 0 22 X>4j6z`4@=[P;:ko8M<mZ0
+Z2 !s110 1702317497
 Z3 VDg1SIo80bB@j0V0VzS_@n1
+r1
+!s85 0
+!i10b 1
+!s100 DBLR1cNVee34K5_V3l@VH2
+I>QK^Vba6bT2k7hHQdNGZe2
+!s105 AluTb_sv_unit
 S1
 Z4 dC:/Users/mrajz/Documents/UNI/SecondYear/EE20021-DigitalSystemsDesign/DSDCoursework/CW2RegisterFile/Simulation
+Z5 w1702317494
+Z6 8C:/Users/mrajz/Documents/UNI/SecondYear/EE20021-DigitalSystemsDesign/DSDCoursework/CW3ArithmeticLogicUnit/AluTb.sv
+Z7 FC:/Users/mrajz/Documents/UNI/SecondYear/EE20021-DigitalSystemsDesign/DSDCoursework/CW3ArithmeticLogicUnit/AluTb.sv
+!i122 84
+L0 7 338
+Z8 OV;L;2020.1;71
+31
+Z9 !s108 1702317497.000000
+Z10 !s107 C:/Users/mrajz/Documents/UNI/SecondYear/EE20021-DigitalSystemsDesign/DSDCoursework/CW3ArithmeticLogicUnit/AluTb.sv|
+Z11 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/mrajz/Documents/UNI/SecondYear/EE20021-DigitalSystemsDesign/DSDCoursework/CW3ArithmeticLogicUnit/AluTb.sv|
+!i113 1
+Z12 o-work work -sv
+Z13 tCvgOpt 0
+n@alu@tb
+XAluTb_sv_unit
+R0
+R1
+R2
+VX>4j6z`4@=[P;:ko8M<mZ0
+r1
+!s85 0
+!i10b 1
+!s100 oN^?k0dAgTIFSDP;1]Kgi0
+IX>4j6z`4@=[P;:ko8M<mZ0
+!i103 1
+S1
+R4
+R5
+R6
+R7
+!i122 84
+L0 3 0
+R8
+31
+R9
+R10
+R11
+!i113 1
+R12
+R13
+n@alu@tb_sv_unit
+vArithmeticLogicUnit
+R0
+R1
+DXx4 work 27 ArithmeticLogicUnit_sv_unit 0 22 nSJ>`6OFjEjHJa_MoH=>;3
+R2
+R3
+r1
+!s85 0
+!i10b 1
+!s100 LR8KOf`W48mh01gXz;nBC1
+I[RIYVgemez<NAbzRkdCW33
+!s105 ArithmeticLogicUnit_sv_unit
+S1
+R4
+Z14 w1702310335
+Z15 8C:/Users/mrajz/Documents/UNI/SecondYear/EE20021-DigitalSystemsDesign/DSDCoursework/CW3ArithmeticLogicUnit/ArithmeticLogicUnit.sv
+Z16 FC:/Users/mrajz/Documents/UNI/SecondYear/EE20021-DigitalSystemsDesign/DSDCoursework/CW3ArithmeticLogicUnit/ArithmeticLogicUnit.sv
+!i122 85
+L0 10 206
+R8
+31
+R9
+Z17 !s107 C:/Users/mrajz/Documents/UNI/SecondYear/EE20021-DigitalSystemsDesign/DSDCoursework/CW3ArithmeticLogicUnit/ArithmeticLogicUnit.sv|
+Z18 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/mrajz/Documents/UNI/SecondYear/EE20021-DigitalSystemsDesign/DSDCoursework/CW3ArithmeticLogicUnit/ArithmeticLogicUnit.sv|
+!i113 1
+R12
+R13
+n@arithmetic@logic@unit
+XArithmeticLogicUnit_sv_unit
+R0
+R1
+R2
+VnSJ>`6OFjEjHJa_MoH=>;3
+r1
+!s85 0
+!i10b 1
+!s100 249dTdgK5K@h;[<eZfX_U2
+InSJ>`6OFjEjHJa_MoH=>;3
+!i103 1
+S1
+R4
+R14
+R15
+R16
+!i122 85
+L0 7 0
+R8
+31
+R9
+R17
+R18
+!i113 1
+R12
+R13
+n@arithmetic@logic@unit_sv_unit
+XInstructionSetPkg
+R0
+R2
+!i10b 1
+!s100 zS2JeJ?T7MI2E_3aHZJiW1
+Z19 !s11b Dg1SIo80bB@j0V0VzS_@n1
+If^IZBAbePmP3M:aJmAVle2
+Vf^IZBAbePmP3M:aJmAVle2
+S1
+R4
+w1702308918
+8C:/Users/mrajz/Documents/UNI/SecondYear/EE20021-DigitalSystemsDesign/DSDCoursework/CW3ArithmeticLogicUnit/InstructionSet.sv
+FC:/Users/mrajz/Documents/UNI/SecondYear/EE20021-DigitalSystemsDesign/DSDCoursework/CW3ArithmeticLogicUnit/InstructionSet.sv
+!i122 86
+L0 11 0
+R8
+r1
+!s85 0
+31
+R9
+!s107 C:/Users/mrajz/Documents/UNI/SecondYear/EE20021-DigitalSystemsDesign/DSDCoursework/CW3ArithmeticLogicUnit/InstructionSet.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/mrajz/Documents/UNI/SecondYear/EE20021-DigitalSystemsDesign/DSDCoursework/CW3ArithmeticLogicUnit/InstructionSet.sv|
+!i113 1
+R12
+R13
+n@instruction@set@pkg
+vRegisterFile
+R0
+Z20 !s110 1702306087
+!i10b 1
+!s100 onQ1aiLQFVgRZTb5^g3zb2
+R19
+ITN1]SHS18HBf];`ZA>]:O0
+R3
+S1
+R4
 w1702304213
 8C:/Users/mrajz/Documents/UNI/SecondYear/EE20021-DigitalSystemsDesign/DSDCoursework/CW2RegisterFile/RegisterFile.sv
 FC:/Users/mrajz/Documents/UNI/SecondYear/EE20021-DigitalSystemsDesign/DSDCoursework/CW2RegisterFile/RegisterFile.sv
 !i122 11
 L0 7 28
-Z5 OV;L;2020.1;71
+R8
 r1
 !s85 0
 31
-Z6 !s108 1702306087.000000
+Z21 !s108 1702306087.000000
 !s107 C:/Users/mrajz/Documents/UNI/SecondYear/EE20021-DigitalSystemsDesign/DSDCoursework/CW2RegisterFile/RegisterFile.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/mrajz/Documents/UNI/SecondYear/EE20021-DigitalSystemsDesign/DSDCoursework/CW2RegisterFile/RegisterFile.sv|
 !i113 1
-Z7 o-work work -sv
-Z8 tCvgOpt 0
+R12
+R13
 n@register@file
 vRegisterFileTb
 R0
-R1
+R20
 !i10b 1
 !s100 n_Jh;Z[SUzWdlK:fP8ViF3
-R2
+R19
 IjYVWj]2QbfUK5EjN1L92h3
 R3
 S1
@@ -50,14 +186,14 @@ w1702306062
 FC:/Users/mrajz/Documents/UNI/SecondYear/EE20021-DigitalSystemsDesign/DSDCoursework/CW2RegisterFile/RegisterFileTb.sv
 !i122 12
 L0 9 60
-R5
+R8
 r1
 !s85 0
 31
-R6
+R21
 !s107 C:/Users/mrajz/Documents/UNI/SecondYear/EE20021-DigitalSystemsDesign/DSDCoursework/CW2RegisterFile/RegisterFileTb.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/mrajz/Documents/UNI/SecondYear/EE20021-DigitalSystemsDesign/DSDCoursework/CW2RegisterFile/RegisterFileTb.sv|
 !i113 1
-R7
-R8
+R12
+R13
 n@register@file@tb
