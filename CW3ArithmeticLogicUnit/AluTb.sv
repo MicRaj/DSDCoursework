@@ -178,11 +178,53 @@ module AluTb();
 		if (OutDest != 16'h0007) $display("Error in ROR operation at time %t",$time);
 		if (OutFlags != sFlags'(1)) $display("Error (flags) in ROR operation at time %t",$time);
 		#50;
-
 		// -------------------------------------------
+
 		// SUB - Subtraction. Flags are set according to the result.
 		// -------------------------------------------
-		SUB 
+		Operation = SUB;
+		InFlags = sFlags'(0);
+		InDest = 16'd1024;
+		InSrc = 16'd16;
+		#1
+		if (OutDest != 16'd1008) $display("Error in SUB operation at time %t",$time);
+		if (OutFlags != sFlags'(8)) $display("Error (flags) in SUB operation at time %t",$time);
+		// tests generic subtraction
+
+		InFlags = sFlags'(0);
+		InDest = 16'd16;
+		InSrc = 16'd1024;
+		#1
+		if (OutDest != -16'd1008) $display("Error in SUB operation at time %t",$time);
+		if (OutFlags != sFlags'(4)) $display("Error (flags) in SUB operation at time %t",$time);
+		// tests subtraction that results in negative
+
+		InFlags = sFlags'(0);
+		InDest = 16'd0;
+		InSrc = 16'd0;
+		#1
+		if (OutDest != 16'd0) $display("Error in SUB operation at time %t",$time);
+		if (OutFlags != sFlags'(10)) $display("Error (flags) in SUB operation at time %t",$time);
+		// tests subtraction that ends in 0
+
+		InFlags = sFlags'(0);
+		InDest = -16'd32768;
+		InSrc = 16'd2;
+		#1
+		//if (OutDest != -16'd1008) $display("Error in SUB operation at time %t",$time);
+		if (OutFlags != sFlags'(28)) $display("Error (flags) in SUB operation at time %t",$time);
+		// tests overflow flag
+
+		/*
+		InFlags = sFlags'(0);
+		InDest = 16'd0;
+		InSrc = 16'd0;
+		#1
+		if (OutDest != 16'd0) $display("Error in SUB operation at time %t",$time);
+		if (OutFlags != sFlags'(10)) $display("Error (flags) in SUB operation at time %t",$time);
+		// tests subtraction that involving carry flag
+		*/ 
+		// not implemented
 		// -------------------------------------------
 
 		// DIV - Result of integer signed division
@@ -229,12 +271,58 @@ module AluTb();
 
 		// MUL - Lower half of integer signed multiplication
 		// -------------------------------------------
-		MUL 
+		Operation = MUL;
+		InDest = 16'd16;
+		InSrc = 16'd16;
+		#1
+		if (OutDest != 16'h0010) $display("Error in MUL operation at time %t",$time);
+		if (OutFlags != sFlags'(0)) $display("Error (flags) in MUL operation at time %t",$time);
+
+		#1
+		InDest = 16'd0;
+		InSrc = 16'd0;
+		if (OutDest != 16'h0000) $display("Error in MUL operation at time %t",$time);
+		if (OutFlags != sFlags'(10)) $display("Error (flags) in MUL operation at time %t",$time);
+
+		#1
+		InDest = -16'd16;
+		InSrc = 16'd16;
+		if (OutDest != 16'hFF00) $display("Error in MUL operation at time %t",$time);
+		if (OutFlags != sFlags'(12)) $display("Error (flags) in MUL operation at time %t",$time);
 		// -------------------------------------------
 
 		// MUH - High half of integer signed multiplication
 		// -------------------------------------------
-		MUH 
+		Operation = MUH;
+		InDest = 16'd1024;
+		InSrc = 16'd64;
+		#1
+		if (OutDest != 16'h0001) $display("Error in MUH operation at time %t",$time);
+		if (OutFlags != sFlags'(0)) $display("Error (flags) in MUH operation at time %t",$time);
+
+		#1
+		InDest = 16'd2;
+		InSrc = 16'd1;
+		if (OutDest != 16'h0000) $display("Error in MUH operation at time %t",$time);
+		if (OutFlags != sFlags'(10)) $display("Error (flags) in MUH operation at time %t",$time);
+
+		#1
+		InDest = -16'd2048;
+		InSrc = 16'd128;
+		if (OutDest != 16'hFFFC) $display("Error in MUH operation at time %t",$time);
+		if (OutFlags != sFlags'(12)) $display("Error (flags) in MUH operation at time %t",$time);
+
+		#1
+		InDest = 16'd0;
+		InSrc = 16'd0;
+		if (OutDest != 16'h0000) $display("Error in MUH operation at time %t",$time);
+		if (OutFlags != sFlags'(10)) $display("Error (flags) in MUH operation at time %t",$time);
+
+		#1
+		InDest = 16'd4095;
+		InSrc = 14095;
+		if (OutDest != 16'h00FF) $display("Error in MUH operation at time %t",$time);
+		if (OutFlags != sFlags'(8)) $display("Error (flags) in MUH operation at time %t",$time);
 		// -------------------------------------------
 
 		// End of instruction simulation
