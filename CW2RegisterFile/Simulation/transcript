@@ -1,0 +1,74 @@
+# Compile of RegisterFile.sv was successful.
+# Compile of RegisterFileTb.sv was successful.
+# 2 compiles, 0 failed with no errors.
+vsim -gui work.RegisterFileTb
+# vsim -gui work.RegisterFileTb 
+# Start time: 14:09:10 on Dec 11,2023
+# Loading sv_std.std
+# Loading work.RegisterFileTb
+# Loading work.RegisterFile
+add wave sim:/RegisterFileTb/*
+run -all
+# ReadDataA = 61680, should be 1111000011110000
+# ReadDataB =     x, should be 0000000000000000
+# ** Note: $stop    : C:/Users/mrajz/Documents/UNI/SecondYear/EE20021-DigitalSystemsDesign/DSDCoursework/CW2RegisterFile/RegisterFileTb.sv(66)
+#    Time: 110 ns  Iteration: 2  Instance: /RegisterFileTb
+# Break in Module RegisterFileTb at C:/Users/mrajz/Documents/UNI/SecondYear/EE20021-DigitalSystemsDesign/DSDCoursework/CW2RegisterFile/RegisterFileTb.sv line 66
+# Compile of RegisterFile.sv was successful.
+# Compile of RegisterFileTb.sv was successful.
+# 2 compiles, 0 failed with no errors.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.RegisterFileTb
+# Loading work.RegisterFile
+run -all
+# ReadDataA = 61680, should be 1111000011110000
+# ReadDataB =     0, should be 0000000000000000
+# ** Note: $stop    : C:/Users/mrajz/Documents/UNI/SecondYear/EE20021-DigitalSystemsDesign/DSDCoursework/CW2RegisterFile/RegisterFileTb.sv(66)
+#    Time: 110 ns  Iteration: 2  Instance: /RegisterFileTb
+# Break in Module RegisterFileTb at C:/Users/mrajz/Documents/UNI/SecondYear/EE20021-DigitalSystemsDesign/DSDCoursework/CW2RegisterFile/RegisterFileTb.sv line 66
+# Compile of RegisterFile.sv was successful.
+# Compile of RegisterFileTb.sv was successful.
+# 2 compiles, 0 failed with no errors.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.RegisterFileTb
+# Loading work.RegisterFile
+run -all
+# ReadDataA = 61680, should be 1111000011110000
+# ReadDataB = 61680, should be 0000000000000000
+# Error in read/write B operation at time                30000
+# ** Note: $stop    : C:/Users/mrajz/Documents/UNI/SecondYear/EE20021-DigitalSystemsDesign/DSDCoursework/CW2RegisterFile/RegisterFileTb.sv(66)
+#    Time: 110 ns  Iteration: 2  Instance: /RegisterFileTb
+# Break in Module RegisterFileTb at C:/Users/mrajz/Documents/UNI/SecondYear/EE20021-DigitalSystemsDesign/DSDCoursework/CW2RegisterFile/RegisterFileTb.sv line 66
+# Compile of RegisterFile.sv was successful.
+# Compile of RegisterFileTb.sv was successful.
+# 2 compiles, 0 failed with no errors.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.RegisterFileTb
+# Loading work.RegisterFile
+run -all
+# ReadDataA = 61680, should be 1111000011110000
+# ReadDataB = 61680, should be 0000000000000000
+# Error in read/write B operation at time                30000
+# Error in overwrite operation at time                70000
+# Error in write enable operation at time               110000
+# ** Note: $stop    : C:/Users/mrajz/Documents/UNI/SecondYear/EE20021-DigitalSystemsDesign/DSDCoursework/CW2RegisterFile/RegisterFileTb.sv(66)
+#    Time: 110 ns  Iteration: 2  Instance: /RegisterFileTb
+# Break in Module RegisterFileTb at C:/Users/mrajz/Documents/UNI/SecondYear/EE20021-DigitalSystemsDesign/DSDCoursework/CW2RegisterFile/RegisterFileTb.sv line 66
+# Compile of RegisterFile.sv was successful.
+# Compile of RegisterFileTb.sv was successful.
+# 2 compiles, 0 failed with no errors.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.RegisterFileTb
+# Loading work.RegisterFile
+run -all
+# ReadDataA = 61680, should be 1111000011110000
+# ReadDataB =     0, should be 0000000000000000
+# ** Note: $stop    : C:/Users/mrajz/Documents/UNI/SecondYear/EE20021-DigitalSystemsDesign/DSDCoursework/CW2RegisterFile/RegisterFileTb.sv(66)
+#    Time: 110 ns  Iteration: 2  Instance: /RegisterFileTb
+# Break in Module RegisterFileTb at C:/Users/mrajz/Documents/UNI/SecondYear/EE20021-DigitalSystemsDesign/DSDCoursework/CW2RegisterFile/RegisterFileTb.sv line 66
+# End time: 14:48:58 on Dec 11,2023, Elapsed time: 0:39:48
+# Errors: 0, Warnings: 1

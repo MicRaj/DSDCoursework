@@ -9,19 +9,19 @@ module RegisterFile
 (
 input logic Clock,
 input logic [5:0] AddressA,
-output logic [15:0] ReadDataA,
+output logic [15:0] ReadDataA=0,
 input logic [15:0] WriteData,
 input logic WriteEnable,
 input logic [5:0] AddressB,
-output logic [15:0] ReadDataB
+output logic [15:0] ReadDataB =  0
 );
 //Register Array, 64 Registers that are 16 bits wide Registers[12][5:2] 13th register bit 5-2
-logic [15:0] Registers [64];
+logic [15:0] Registers [64]= '{default: '0};
 
 
 always_ff @(posedge Clock)
 begin
-	if(writeEnable)
+	if(WriteEnable)
 		Registers[AddressA] <= WriteData;//Write Data on clock cycle if WriteEnable Pin High
 end
 

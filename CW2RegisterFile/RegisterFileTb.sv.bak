@@ -4,7 +4,6 @@
 // Module name: Register
 // Description: Register testbench file, used to test the microprocessor's registers
 ////////////////////////////////////////////////////////////////////////////////////////
-`timescale 1ns / 1ps
 
 module RegisterFileTb();
 
@@ -63,6 +62,6 @@ module RegisterFileTb();
 		if (ReadDataA != 16'b0000000000000000) $display("Error in write enable operation at time %t",$time);
 		// -------------------------------------------
 
-		$stop;
+		$stop
 	end
 endmodule

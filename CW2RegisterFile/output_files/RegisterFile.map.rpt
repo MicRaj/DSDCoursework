@@ -1,5 +1,5 @@
-Analysis & Synthesis report for RegisterFile
-Mon Nov 27 16:58:04 2023
+Analysis & Elaboration report for RegisterFile
+Mon Dec 11 14:17:01 2023
 Quartus Prime Version 22.1std.2 Build 922 07/20/2023 SC Lite Edition
 
 
@@ -7,10 +7,10 @@ Quartus Prime Version 22.1std.2 Build 922 07/20/2023 SC Lite Edition
 ; Table of Contents ;
 ---------------------
   1. Legal Notice
-  2. Analysis & Synthesis Summary
-  3. Analysis & Synthesis Settings
-  4. Parallel Compilation
-  5. Analysis & Synthesis Messages
+  2. Analysis & Elaboration Summary
+  3. Parallel Compilation
+  4. Analysis & Elaboration Settings
+  5. Analysis & Elaboration Messages
 
 
 
@@ -34,26 +34,42 @@ https://fpgasoftware.intel.com/eula.
 
 
 
-+------------------------------------------------------------------------------+
-; Analysis & Synthesis Summary                                                 ;
-+-----------------------------+------------------------------------------------+
-; Analysis & Synthesis Status ; Failed - Mon Nov 27 16:58:04 2023              ;
-; Quartus Prime Version       ; 22.1std.2 Build 922 07/20/2023 SC Lite Edition ;
-; Revision Name               ; RegisterFile                                   ;
-; Top-level Entity Name       ; RegisterFile                                   ;
-; Family                      ; Cyclone V                                      ;
-; Logic utilization (in ALMs) ; N/A until Partition Merge                      ;
-; Total registers             ; N/A until Partition Merge                      ;
-; Total pins                  ; N/A until Partition Merge                      ;
-; Total virtual pins          ; N/A until Partition Merge                      ;
-; Total block memory bits     ; N/A until Partition Merge                      ;
-; Total PLLs                  ; N/A until Partition Merge                      ;
-; Total DLLs                  ; N/A until Partition Merge                      ;
-+-----------------------------+------------------------------------------------+
++--------------------------------------------------------------------------------+
+; Analysis & Elaboration Summary                                                 ;
++-------------------------------+------------------------------------------------+
+; Analysis & Elaboration Status ; Successful - Mon Dec 11 14:17:01 2023          ;
+; Quartus Prime Version         ; 22.1std.2 Build 922 07/20/2023 SC Lite Edition ;
+; Revision Name                 ; RegisterFile                                   ;
+; Top-level Entity Name         ; RegisterFile                                   ;
+; Family                        ; Cyclone V                                      ;
+; Logic utilization (in ALMs)   ; N/A until Partition Merge                      ;
+; Total registers               ; N/A until Partition Merge                      ;
+; Total pins                    ; N/A until Partition Merge                      ;
+; Total virtual pins            ; N/A until Partition Merge                      ;
+; Total block memory bits       ; N/A until Partition Merge                      ;
+; Total PLLs                    ; N/A until Partition Merge                      ;
+; Total DLLs                    ; N/A until Partition Merge                      ;
++-------------------------------+------------------------------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 6           ;
+; Maximum allowed            ; 6           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Settings                                                                                             ;
+; Analysis & Elaboration Settings                                                                                           ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 ; Option                                                                          ; Setting            ; Default Value      ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
@@ -139,39 +155,23 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 
 
-+------------------------------------------+
-; Parallel Compilation                     ;
-+----------------------------+-------------+
-; Processors                 ; Number      ;
-+----------------------------+-------------+
-; Number detected on machine ; 6           ;
-; Maximum allowed            ; 6           ;
-;                            ;             ;
-; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
-;                            ;             ;
-; Usage by Processor         ; % Time Used ;
-;     Processor 1            ; 100.0%      ;
-+----------------------------+-------------+
-
-
-+-------------------------------+
-; Analysis & Synthesis Messages ;
-+-------------------------------+
++---------------------------------+
+; Analysis & Elaboration Messages ;
++---------------------------------+
 Info: *******************************************************************
-Info: Running Quartus Prime Analysis & Synthesis
+Info: Running Quartus Prime Analysis & Elaboration
     Info: Version 22.1std.2 Build 922 07/20/2023 SC Lite Edition
-    Info: Processing started: Mon Nov 27 16:57:41 2023
-Info: Command: quartus_map --read_settings_files=on --write_settings_files=off RegisterFile -c RegisterFile
+    Info: Processing started: Mon Dec 11 14:16:54 2023
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off RegisterFile -c RegisterFile --analysis_and_elaboration
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
-Error (10170): Verilog HDL syntax error at RegisterFile.sv(17) near text: ")";  expecting a direction. Check for and fix any syntax errors that appear immediately before or at the specified keyword. The Intel FPGA Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number. File: C:/Users/mrajz/Documents/UNI/SecondYear/EE20021-DigitalSystemsDesign/DSDCoursework/CW2RegisterFile/RegisterFile.sv Line: 17
-Error (10112): Ignored design unit "RegisterFile" at RegisterFile.sv(7) due to previous errors File: C:/Users/mrajz/Documents/UNI/SecondYear/EE20021-DigitalSystemsDesign/DSDCoursework/CW2RegisterFile/RegisterFile.sv Line: 7
-Info (12021): Found 0 design units, including 0 entities, in source file registerfile.sv
-Error: Quartus Prime Analysis & Synthesis was unsuccessful. 2 errors, 1 warning
-    Error: Peak virtual memory: 4777 megabytes
-    Error: Processing ended: Mon Nov 27 16:58:04 2023
-    Error: Elapsed time: 00:00:23
-    Error: Total CPU time (on all processors): 00:00:09
+Info (12021): Found 1 design units, including 1 entities, in source file registerfile.sv
+    Info (12023): Found entity 1: RegisterFile File: C:/Users/mrajz/Documents/UNI/SecondYear/EE20021-DigitalSystemsDesign/DSDCoursework/CW2RegisterFile/RegisterFile.sv Line: 7
+Info (12127): Elaborating entity "RegisterFile" for the top level hierarchy
+Info: Quartus Prime Analysis & Elaboration was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 4789 megabytes
+    Info: Processing ended: Mon Dec 11 14:17:01 2023
+    Info: Elapsed time: 00:00:07
+    Info: Total CPU time (on all processors): 00:00:07
 
 
