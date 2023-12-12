@@ -1,5 +1,5 @@
 Analysis & Synthesis report for VgaController
-Tue Dec  5 13:17:00 2023
+Tue Dec 12 12:21:49 2023
 Quartus Prime Version 22.1std.2 Build 922 07/20/2023 SC Lite Edition
 
 
@@ -45,7 +45,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +---------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Tue Dec  5 13:17:00 2023          ;
+; Analysis & Synthesis Status     ; Successful - Tue Dec 12 12:21:49 2023          ;
 ; Quartus Prime Version           ; 22.1std.2 Build 922 07/20/2023 SC Lite Edition ;
 ; Revision Name                   ; VgaController                                  ;
 ; Top-level Entity Name           ; VgaTopFPGA                                     ;
@@ -70,7 +70,7 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 ; Option                                                                          ; Setting            ; Default Value      ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
-; Device                                                                          ; 5CGXFC7C7F23C8     ;                    ;
+; Device                                                                          ; 5CSEMA5F31C6       ;                    ;
 ; Top-level entity name                                                           ; VgaTopFPGA         ; VgaController      ;
 ; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
 ; Use smart compilation                                                           ; Off                ; Off                ;
@@ -253,11 +253,11 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;     CLR SCLR          ; 11                          ;
 ;     ENA CLR SCLR      ; 10                          ;
 ;     plain             ; 24                          ;
-; arriav_lcell_comb     ; 45                          ;
+; arriav_lcell_comb     ; 46                          ;
 ;     arith             ; 21                          ;
 ;         1 data inputs ; 21                          ;
-;     normal            ; 24                          ;
-;         1 data inputs ; 2                           ;
+;     normal            ; 25                          ;
+;         1 data inputs ; 3                           ;
 ;         2 data inputs ; 3                           ;
 ;         3 data inputs ; 3                           ;
 ;         4 data inputs ; 2                           ;
@@ -266,7 +266,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; boundary_port         ; 34                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 3.00                        ;
-; Average LUT depth     ; 1.63                        ;
+; Average LUT depth     ; 1.68                        ;
 +-----------------------+-----------------------------+
 
 
@@ -285,7 +285,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 22.1std.2 Build 922 07/20/2023 SC Lite Edition
-    Info: Processing started: Tue Dec  5 13:16:48 2023
+    Info: Processing started: Tue Dec 12 12:21:37 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off VgaController -c VgaController
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
@@ -298,6 +298,30 @@ Info (12128): Elaborating entity "VgaController" for hierarchy "VgaController:vg
 Warning (10230): Verilog HDL assignment warning at VgaController.sv(40): truncated value with size 32 to match size of target (10) File: C:/Users/mrajz/Documents/UNI/SecondYear/EE20021-DigitalSystemsDesign/DSDCoursework/CW4VgaController/VgaController.sv Line: 40
 Warning (10230): Verilog HDL assignment warning at VgaController.sv(43): truncated value with size 32 to match size of target (11) File: C:/Users/mrajz/Documents/UNI/SecondYear/EE20021-DigitalSystemsDesign/DSDCoursework/CW4VgaController/VgaController.sv Line: 43
 Info (286030): Timing-Driven Synthesis is running
+Warning (20013): Ignored 23 assignments for entity "AluFpgaTop" -- entity does not exist in design
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -entity AluFpgaTop -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -entity AluFpgaTop -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_PRESERVE_HIGH_SPEED_TILES ON -entity AluFpgaTop -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_IGNORE_SOURCE_FILE_CHANGES OFF -entity AluFpgaTop -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_ALWAYS_USE_QXP_NETLIST OFF -entity AluFpgaTop -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_COLOR 16764057 -entity AluFpgaTop -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_IMPORT_ASSIGNMENTS ON -entity AluFpgaTop -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_IMPORT_EXISTING_ASSIGNMENTS REPLACE_CONFLICTING -entity AluFpgaTop -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_IMPORT_EXISTING_LOGICLOCK_REGIONS UPDATE_CONFLICTING -entity AluFpgaTop -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_IMPORT_PIN_ASSIGNMENTS ON -entity AluFpgaTop -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_IMPORT_PROMOTE_ASSIGNMENTS ON -entity AluFpgaTop -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_TYPE STANDARD_PARTITION -entity AluFpgaTop -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name ALLOW_MULTIPLE_PERSONAS OFF -entity AluFpgaTop -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_ASD_REGION_ID 1 -entity AluFpgaTop -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name CROSS_BOUNDARY_OPTIMIZATIONS OFF -entity AluFpgaTop -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PROPAGATE_CONSTANTS_ON_INPUTS ON -entity AluFpgaTop -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PROPAGATE_INVERSIONS_ON_INPUTS ON -entity AluFpgaTop -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name REMOVE_LOGIC_ON_UNCONNECTED_OUTPUTS ON -entity AluFpgaTop -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name MERGE_EQUIVALENT_INPUTS ON -entity AluFpgaTop -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name MERGE_EQUIVALENT_BIDIRS ON -entity AluFpgaTop -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name ABSORB_PATHS_FROM_OUTPUTS_TO_INPUTS ON -entity AluFpgaTop -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_EXTRACT_HARD_BLOCK_NODES ON -entity AluFpgaTop -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_ENABLE_STRICT_PRESERVATION OFF -entity AluFpgaTop -section_id Top was ignored
 Info (144001): Generated suppressed messages file C:/Users/mrajz/Documents/UNI/SecondYear/EE20021-DigitalSystemsDesign/DSDCoursework/CW4VgaController/output_files/VgaController.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
@@ -309,11 +333,11 @@ Info (21057): Implemented 101 device resources after synthesis - the final resou
     Info (21058): Implemented 5 input pins
     Info (21059): Implemented 29 output pins
     Info (21061): Implemented 67 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 7 warnings
-    Info: Peak virtual memory: 4854 megabytes
-    Info: Processing ended: Tue Dec  5 13:17:00 2023
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 31 warnings
+    Info: Peak virtual memory: 4850 megabytes
+    Info: Processing ended: Tue Dec 12 12:21:49 2023
     Info: Elapsed time: 00:00:12
-    Info: Total CPU time (on all processors): 00:00:06
+    Info: Total CPU time (on all processors): 00:00:13
 
 
 +------------------------------------------+
