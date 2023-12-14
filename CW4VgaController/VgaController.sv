@@ -1,6 +1,9 @@
-// VGA controller
-// Coursework activity 4
-// November 2022
+////////////////////////////////////////////////////////////////////////////////////////
+// Authors: Michal Rajzer(mr2207), Ben Green(bg651)
+// Date: 14/12/2023
+// Module name: VgaController
+// Description: VGA controller to display objects on a computer screen
+////////////////////////////////////////////////////////////////////////////////////////
 
 module VgaController
 (
@@ -82,8 +85,5 @@ module VgaController
 		else
 			sync_n = '1;
 	end
-	
-		
-	
 	
 endmodule

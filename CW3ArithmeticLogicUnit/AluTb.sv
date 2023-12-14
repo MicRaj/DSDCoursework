@@ -1,3 +1,10 @@
+////////////////////////////////////////////////////////////////////////////////////////
+// Authors: Michal Rajzer(mr2207), Ben Green(bg651)
+// Date: 14/12/2023
+// Module name: AluTb
+// Description: Arithmetic Logic Unit (ALU) testbench
+////////////////////////////////////////////////////////////////////////////////////////
+
 `timescale 1ns / 1ps
 
 import InstructionSetPkg::*;
@@ -157,7 +164,6 @@ module AluTb();
 		#10 InSrc = 16'h1234;  
 	   #1 if (OutDest != 16'h484A) $display("Error in NOR operation at time %t",$time);
 		#50;
-
 		// -------------------------------------------
 
 		// ROR - Right bit Shift

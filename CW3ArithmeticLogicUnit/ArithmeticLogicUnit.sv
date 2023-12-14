@@ -1,3 +1,10 @@
+////////////////////////////////////////////////////////////////////////////////////////
+// Authors: Michal Rajzer(mr2207), Ben Green(bg651)
+// Date: 14/12/2023
+// Module name: ArithmeticLogicUnit
+// Description: Arithmetic Logic Unit (ALU) for HighRisc processor
+////////////////////////////////////////////////////////////////////////////////////////
+
 // ArithmeticLogicUnit
 // This is a basic implementation of the essential operations needed
 // in the ALU. Adding futher instructions to this file will increase 
